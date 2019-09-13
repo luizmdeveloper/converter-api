@@ -9,10 +9,10 @@
 	          <column autoIncrement="true" name="id" type="BIGINT">
 	               <constraints primaryKey="true" primaryKeyName="id_conversao"/>
 	          </column>
-	          <column name="celsius" type="DECIMAL">
+	          <column name="celsius" type="DECIMAL(10,2)">
 	          	<constraints nullable="false"/>
 	          </column>
-	          <column name="farehint" type="DECIMAL">
+	          <column name="farehint" type="DECIMAL(10,2)">
 	          	<constraints nullable="false"/>
 	          </column>          
 	    </createTable>

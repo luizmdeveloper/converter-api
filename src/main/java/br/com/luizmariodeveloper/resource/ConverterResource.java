@@ -29,14 +29,14 @@ public class ConverterResource {
 	private ConverterRepository converterRepository;
 	
 	@GetMapping
-	@ApiOperation(value="Returns a list of conversions made by api")
+	@ApiOperation(value="Lista as conversões realizada")
 	public ResponseEntity<List<Converter>> findAll(){
 		return ResponseEntity.ok().body(converterRepository.findAll());
 	}
 	
 	
 	@GetMapping("/{celsius}")
-	@ApiOperation(value="Convertion celsius to farehint")
+	@ApiOperation(value="Passa graus celsius e converter para farehint")
 	public ResponseEntity<Converter> converterCelsiusToFarehint(@PathVariable String celsius){
 		return ResponseEntity.ok().body(converterService.save(celsius));
 	}

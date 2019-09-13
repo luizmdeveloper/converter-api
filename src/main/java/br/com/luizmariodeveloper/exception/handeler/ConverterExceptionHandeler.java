@@ -13,7 +13,7 @@ public class ConverterExceptionHandeler {
 
 	@ExceptionHandler({NumberFormatException.class})
 	public ResponseEntity<List<Erro>> handlePessoaInexistenOuInativaException(NumberFormatException ex, WebRequest request){
-		String mensagemUsuario = "Graus celsius no formato inv√°lido";
+		String mensagemUsuario = "Graus celsius no formato inv·lido";
 		String mensagemDesenvolvedor =  ex.toString();
 		List<Erro> erros = Arrays.asList(new Erro(mensagemUsuario, mensagemDesenvolvedor));
 		

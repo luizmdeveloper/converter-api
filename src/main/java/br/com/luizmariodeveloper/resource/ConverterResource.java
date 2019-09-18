@@ -36,8 +36,14 @@ public class ConverterResource {
 	
 	
 	@GetMapping("/{celsius}")
-	@ApiOperation(value="Passa graus celsius e converter para farehint")
+	@ApiOperation(value="Convete graus celsius e converter para farehint")
 	public ResponseEntity<Converter> converterCelsiusToFarehint(@PathVariable String celsius){
-		return ResponseEntity.ok().body(converterService.save(celsius));
+		return ResponseEntity.ok().body(converterService.converterCelsiusParaFahrenheit(celsius));
+	}
+	
+	@GetMapping(value = "/{fahrenheit}", params = "fahrenheit")
+	@ApiOperation(value="Converte farehint para graus celsius")
+	public ResponseEntity<Converter> converterFarehintToCelsius(@PathVariable String fahrenheit){
+		return ResponseEntity.ok().body(converterService.converterFahrenheitPraCelsius(fahrenheit));
 	}
 }
